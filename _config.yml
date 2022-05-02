@@ -21,12 +21,12 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Slimicide.Github.io                          # the main title
+title: Slimicide                          # the main title
 
-tagline: Learning to Responsibly Break Things. Writeups 'n Stuff.   # it will display as the sub-title
+tagline: Learning to break things responsibly. Writeups 'n Stuff.   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  I broke it on purpose this time.
+  I break things on purpose sometimes.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://slimicide.github.io'
