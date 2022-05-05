@@ -1,6 +1,6 @@
 ---
 title: HackTheBox - Forge
-date: 2022-05-03 22:33:00 +/-TTTT
+date: 2022-05-03 14:30:00
 categories: [HackTheBox, Machines]
 tags: [hackthebox, forge, ssrf, upload, pdb]     # TAG names should always be lowercase
 img_path: /assets/img/HackTheBox/Forge
