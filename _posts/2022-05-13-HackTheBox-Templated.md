@@ -43,7 +43,7 @@ is an object and so everything involved in the Jinja2 server is accessible by bo
 
 For the first payload, we can bounce back a step to the `string` object by requesting:<br>
 ```
-{%raw%}{{"1337.__class__"}}{%endraw%}
+{%raw%}{{"1337".__class__}}{%endraw%}
 ```
 
 ![class str](templated_classstr.png "class str")
