@@ -1,6 +1,6 @@
 ---
 title: CSCG 2022 - Intro to Pwn 1
-date: 2022-05-02 22:15:00 +/-TTTT
+date: 2052-05-02 22:15:00 +/-TTTT
 categories: [CSCG 2022, Pwn]
 tags: [cscg2022, pwn]     # TAG names should always be lowercase
 img_path: /assets/img/CSCG2022/
