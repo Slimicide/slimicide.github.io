@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "cve-2022-27677",
+    "title": "AMD Ryzen Master LPE - CVE 2022-27677",
+    "folder": "security",
+    "file": "cve-2022-27677.md",
+    "date": "2023-20-02",
+    "excerpt": "Low-hanging SYSTEM shells",
+    "words": 1034
+  }
+]

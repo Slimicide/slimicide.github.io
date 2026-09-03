@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Valkyrie",
+    "repo": "Slimicide/Valkyrie",
+    "branch": "main",
+    "url": "https://github.com/Slimicide/Valkyrie",
+    "description": "Windows function hook detection / unhooking tool written in C"
+  },
+  {
+    "name": "Scrollback",
+    "repo": "Slimicide/Scrollback",
+    "url": "https://github.com/Slimicide/Scrollback",
+    "description": "Lightweight, minimalist markdown blog created with Muse Spark 1.3"
+  }
+]

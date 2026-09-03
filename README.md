@@ -1,46 +1,51 @@
-# Chirpy Starter [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)](https://rubygems.org/gems/jekyll-theme-chirpy) [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+# scrollback — minimal markdown blog
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders `_includes`, `_layout`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file from the theme's gem. If you have ever installed this theme gem, you can use the command `bundle info --path jekyll-theme-chirpy` to locate these files.
+Dark, single-page, no-build blog for GitHub Pages. ~50 KB + `marked`/`highlight.js` CDN.
 
-The Jekyll organization claims that this is to leave the ball in the user’s court, but this also results in users not being able to enjoy the out-of-the-box experience when using feature-rich themes.
-
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your Jekyll site. The following is a list of targets:
-
-```shell
-.
-├── _config.yml
-├── _data
-├── _plugins
-├── _tabs
-└── index.html
-```
-
-In order to save your time, and to prevent you from missing some files when copying, we extract those files/configurations of the latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
-
-## Prerequisites
-
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of `Ruby`, `RubyGems`, `Jekyll` and `Bundler`.
-
-## Installation
-
-[**Use this template**][use-template] to generate a brand new repository and name it `<GH_USERNAME>.github.io`, where `GH_USERNAME` represents your GitHub username.
-
-Then clone it to your local machine and run:
+## Structure
 
 ```
-$ bundle
+index.html                  layout + explorer sidebar
+style.css                   DOS/ANSI theme (tweak :root vars)
+app.js                      loads posts.json → renders markdown
+posts.json                  index of posts (slug, folder, file, date)
+repos.json                  portfolio repos for the PROJECTS section
+                            ({name, repo: "owner/name", branch?, url, description})
+posts/<topic>/<slug>.md     your posts, grouped by topic folder
+images/<topic>/<slug>/      per-post images (mirrors posts/)
+.nojekyll                   serve as-is on Pages
 ```
 
-## Usage
+The explorer groups posts under their `folder` heading (`META/`, `DEMO/`, …).
+Entries without `folder` fall back to `posts/<file>` and group under `MISC/`.
 
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
+## Add a post (30s)
 
-## License
+1. Pick a topic folder (or make one): `posts/notes/my-slug.md`
+2. Optional images: `images/notes/my-slug/cover.png`, referenced as `images/notes/my-slug/cover.png` — or colocate next to the post and use `./cover.png`
+3. Add entry to `posts.json` with matching `folder`
+4. Push to `main`
 
-This work is published under [MIT][mit] License.
+## Showcase a repo (30s)
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+1. Add to `repos.json`: `{ "name": "my-app", "repo": "you/my-app", "url": "https://github.com/you/my-app", "description": "..." }`
+   (`branch` optional — defaults to the repo's default branch.)
+2. Clicking it opens the repo in-page: README renders in the post
+   renderer, the PROJECTS tab shows the full file tree below the repo
+   list, any text file renders
+   (markdown / code with highlighting, line numbers and copy buttons /
+   images). Binary and >400 KB files link out to GitHub instead.
+   Unauthenticated GitHub API allows ~60 loads/hour/IP.
+
+## Deploy to GitHub Pages
+
+1. Push this folder as repo root
+2. GitHub → Settings → Pages → Deploy from branch → `main` / `/ (root)`
+3. Open `https://<user>.github.io/<repo>/#/your-slug`
+
+Local preview: `python3 -m http.server 8000` then open `http://localhost:8000`
+
+## Customise
+
+- Colours: `:root` vars in `style.css`
+- GitHub link: `href` on `.foot-link` in `index.html`
