@@ -1,5 +1,12 @@
 [
   {
+    "name": "PokeMCP",
+    "repo": "Slimicide/PokeMCP",
+    "branch": "main",
+    "url": "https://github.com/Slimicide/PokeMCP",
+    "description": "A vision-centric Pokemon Emerald MCP and mGBA server."
+  },
+  {
     "name": "Valkyrie",
     "repo": "Slimicide/Valkyrie",
     "branch": "main",
